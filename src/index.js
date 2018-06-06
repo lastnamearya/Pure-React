@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function HelloWorld() {
+function ManyChildren() {
   return React.createElement(
     'div',
-    {/* null */},
-    "Hello World"
+    {},
+    React.createElement('div', {}, 'child1'),
+    React.createElement('div', {}, 'child2',
+      React.createElement('div', {}, 'child2_child')
+    )
   );
 }
 
 ReactDOM.render(
-  <HelloWorld/>,
+  <ManyChildren/>,
   document.querySelector('#root')
 ); 
