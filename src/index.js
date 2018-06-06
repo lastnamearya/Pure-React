@@ -1,27 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Hello() {
+function NameCells() {
   return (
-    <span>Hello</span>
-  );
-}
-
-function World() {
-  return (
-    <span>World</span>
-  );
-}
-
-function HelloWorld() {
-  return (
-    <div>
-      <Hello/> <World/>!
-    </div>
+    <React.Fragment>
+      <td>First Name</td>
+      <td>Last Name</td>
+    </React.Fragment>
   );
 }
 
 ReactDOM.render(
-  <HelloWorld/>,
+  <NameCells/>,
   document.querySelector('#root')
 ); 
