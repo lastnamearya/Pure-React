@@ -6,9 +6,12 @@ function Tweet() {
   return (
     <div className="tweet">
       <Avatar />
-      Tweet
+      <div className="content">
+        <NameWithHandle/>
+        <Message/>
+      </div>
     </div>
-  )
+  );
 }
 
 function Avatar() {
@@ -18,6 +21,27 @@ function Avatar() {
       className="avatar"
       alt="avatar"
     />
+  );
+}
+
+function Message() {
+  return (
+    <div className="message">
+      This is less than 140 characters.
+    </div>
+  );
+}
+
+function NameWithHandle() {
+  return (
+    <span className="name-with-handle">
+      <span className="name">
+        Jigyasu Arya
+      </span>
+      <span className="handle">
+        @lastnamearya
+      </span>
+    </span>
   );
 }
 
