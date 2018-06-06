@@ -1,18 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function ManyChildren() {
-  return React.createElement(
-    'div',
-    {},
-    React.createElement('div', {}, 'child1'),
-    React.createElement('div', {}, 'child2',
-      React.createElement('div', {}, 'child2_child')
-    )
+function Hello() {
+  return (
+    <span>Hello</span>
+  );
+}
+
+function World() {
+  return (
+    <span>World</span>
+  );
+}
+
+function HelloWorld() {
+  return (
+    <div>
+      <Hello/> <World/>!
+    </div>
   );
 }
 
 ReactDOM.render(
-  <ManyChildren/>,
+  <HelloWorld/>,
   document.querySelector('#root')
 ); 
