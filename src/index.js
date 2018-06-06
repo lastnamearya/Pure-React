@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function NameCells() {
+function ValidIndicator() {
+  var isValid = true;
   return (
-    <React.Fragment>
-      <td>First Name</td>
-      <td>Last Name</td>
-    </React.Fragment>
+    <span>{isValid ? 'valid' : 'not valid'}</span>
   );
 }
 
 ReactDOM.render(
-  <NameCells/>,
+  <ValidIndicator/>,
   document.querySelector('#root')
 ); 
