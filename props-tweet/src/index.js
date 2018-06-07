@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import moment from 'moment';
 
 // add the { tweet } prop, destructured
 
@@ -9,7 +10,8 @@ function Tweet({ tweet }) {
     <div className="tweet">
       <Avatar hash={tweet.gravatar}/>
       <div className="content">
-        <NameWithHandle/> <Time/>
+        <NameWithHandle author={tweet.author}/>
+        <Time time={tweet.time}/>
         <Message text={tweet.message}/>
         <div className="buttons">
           <ReplyButton/>
@@ -41,14 +43,15 @@ function Message({ text }) {
   );
 }
 
-function NameWithHandle() {
+function NameWithHandle({ author }) {
+  const { name, handle } = author;
   return (
     <span className="name-with-handle">
       <span className="name">
-        Jigyasu Arya
+        {name}
       </span>
       <span className="handle">
-        @lastnamearya
+        {handle}
       </span>
     </span>
   );
@@ -76,7 +79,7 @@ const MoreOptionsButton = () => (
 
 var testTweet = {
   message: "Something about cats.",
-  gravatar: "413b990ccd2cf5ba69d609fdba4f0302?s=80&r=x",
+  gravatar: "xyz",
   author: {
     handle: "catperson",
     name: "IAMA Cat Person"
