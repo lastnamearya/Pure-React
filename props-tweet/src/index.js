@@ -11,7 +11,7 @@ function Tweet({ tweet }) {
       <Avatar hash={tweet.gravatar}/>
       <div className="content">
         <NameWithHandle author={tweet.author}/>
-        <Time time={tweet.time}/>
+        <Time time={tweet.timestamp}/>
         <Message text={tweet.message}/>
         <div className="buttons">
           <ReplyButton/>
@@ -57,9 +57,14 @@ function NameWithHandle({ author }) {
   );
 }
 
-const Time = () => (
-  <span className="time">3h ago</span>
-);
+const Time = ({ time }) => {
+  const timeString = moment(time).fromNow();
+  return (
+    <span className="time">
+      {timeString}
+    </span>
+  );
+};
 
 const ReplyButton = () => (
   <i className="fa fa-reply reply-button"/>
