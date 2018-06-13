@@ -4,24 +4,28 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function CreditCard({ cardInfo }) {
-  return(
+  var {person, expiration, creditCard, bankName} = cardInfo;
+  return (
     <div className="credit-card">
-      <div className="bank-name">
-        {cardInfo.bankName}
-      </div>
-      <div className="card-number">
-        {cardInfo.creditCard}
-      </div>
-      <div className="first-four-digits">
-        {cardInfo.creditCard.substring(0, 4)}
-      </div>
+      <div className="bank-name">{bankName}</div>
+      <div className="card-number">{creditCard}</div>
+      <div className="first-four-digits">{creditCard.substring(0, 4)}</div>
       <div className="expiration">
-        <span className="valid-thru">VALID THRU</span> {cardInfo.expiration}
+        <span className="valid-thru">VALID THRU</span> {expiration}
       </div>
-      <div className="name">{cardInfo.person}</div>
+      <div className="name">{person}</div>
     </div>
   );
 }
+
+CreditCard.propTypes = {
+  cardInfo: PropTypes.shape({
+    person: PropTypes.string.isRequired,
+    expiration: PropTypes.string.isRequired,
+    creditCard: PropTypes.string.isRequired,
+    bankName: PropTypes.string.isRequired
+  }).isRequired
+};
 
 const details = {
   person: "Jigyasu",
