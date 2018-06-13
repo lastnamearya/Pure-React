@@ -21,7 +21,7 @@ CustomTest.propTypes = {
 
 ReactDOM.render(
   <CustomTest
-    myCustomProp="not_three_letters"
+    myCustomProp={[1, 2, 3]}
   />,
   document.querySelector('#root')
 );
