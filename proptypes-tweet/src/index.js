@@ -36,6 +36,10 @@ function Avatar({ hash }) {
   );
 }
 
+Avatar.propTypes = {
+  hash: PropTypes.string.isRequired
+};
+
 function Message({ text }) {
   return (
     <div className="message">
@@ -43,6 +47,10 @@ function Message({ text }) {
     </div>
   );
 }
+
+Message.propTypes = {
+  text: PropTypes.string.isRequired
+};
 
 function NameWithHandle({ author }) {
   const { name, handle } = author;
