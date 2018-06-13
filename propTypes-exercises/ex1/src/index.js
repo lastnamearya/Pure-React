@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
 function AddressLabel({ label }) {
+  var {name, addressLine1, addressLine2} = label;
   return (
     <div>
-      <div>{label.name}</div>
-      <div>{label.addressLine1}</div>
-      <div>{label.addressLine2}</div>
+      <div>{name}</div>
+      <div>{addressLine1}</div>
+      <div>{addressLine2}</div>
     </div>
   );
 }
