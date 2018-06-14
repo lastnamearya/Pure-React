@@ -1,27 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-function customValidator(props, propName, componentName) {
-  // here, propName === "myCustomProp"
-  if (props[propName].length !== 3) {
-    return new Error (
-      'Invalid prop `' + propName + '` supplied to' + ' `' + componentName + '`. Length is not 3.'
-    );
-  }
-}
-
-const CustomTest = ({ myCustomProp }) => (
-  <span>{myCustomProp}</span>
-);
-
-CustomTest.propTypes = {
-  myCustomProp: customValidator
+function IconButton({ children }) {
+  return (
+    <button>
+      <i className="target-icon"/>
+      {children}
+    </button>
+  );
 }
 
 ReactDOM.render(
-  <CustomTest
-    myCustomProp={[1, 2, 3]}
+  <IconButton 
+    children={"Do The Thing"}
   />,
   document.querySelector('#root')
 );
