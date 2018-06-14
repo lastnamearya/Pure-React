@@ -1,0 +1,42 @@
+body {
+  margin: 20px;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.email {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 10px;
+  line-height: 1.4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.email .line1 {
+  display: flex;
+  justify-content: space-between;
+}
+.sender {
+  flex: 1;
+}
+.subject {
+  flex: 3;
+}
+.date {
+  flex: 0.5;
+  text-align: right;
+}
+.message {
+  color: #9a9a9a;
+}
+.email input[type=checkbox] {
+  flex: 0 0 30px;
+}
+.email .pin {
+  flex: 0 0 30px;
+  color: #777;
+}
+.content {
+  flex: 1;
+}
