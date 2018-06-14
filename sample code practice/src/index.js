@@ -12,7 +12,7 @@ function IconButton({ children }) {
 
 ReactDOM.render(
   <IconButton 
-    children={"Do The Thing"}
+    children={<em>Just Do It</em>}
   />,
   document.querySelector('#root')
 );
