@@ -1,0 +1,14 @@
+body {
+  padding: 40px;
+}
+
+.error-box {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.error-box i {
+  font-size: 30px;
+  margin-right: 10px;
+}

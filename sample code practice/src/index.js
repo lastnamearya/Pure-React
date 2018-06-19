@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function IconButton({ children }) {
+function Nav({ children }) {
+  let items = React.Children.toArray(children);
+  for(let i = items.length - 1; i >= 1; i--) {
+    items.slice(i, 0,
+      <span key={i} className="separator">|</span>
+    );
+  }
   return (
-    <button>
-      <i className="target-icon"/>
-      {children}
-    </button>
+    <div>{items}</div>
   );
 }
 
 ReactDOM.render(
   <IconButton 
-    children={<em>Just Do It</em>}
+    children={"Do The Thing"}
   />,
   document.querySelector('#root')
 );
