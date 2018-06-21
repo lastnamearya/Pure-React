@@ -19,9 +19,7 @@ FileList.propTypes = {
 
 const FileListItem = ({ file }) => (
   <tr className="file-list-item">
-    <td className="file-name">
-      {file.name}
-    </td>
+      <FileName file={file}/>
   </tr>
 );
 
@@ -42,6 +40,21 @@ function FileIcon({ file }) {
 }
 
 FileIcon.propTypes = {
+  file: PropTypes.object.isRequired
+};
+
+function FileName({ file }) {
+  return (
+    <React.Fragment>
+      <FileIcon file={file} />
+      <td className="file-name">
+        {file.name}
+      </td>
+    </React.Fragment>
+  );
+}
+
+FileName.propTypes = {
   file: PropTypes.object.isRequired
 };
 
