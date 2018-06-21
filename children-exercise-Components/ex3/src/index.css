@@ -1,0 +1,14 @@
+body {
+  padding: 40px;
+}
+
+.inline-dialog {
+  margin: 0 auto;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.inline-dialog.modal {
+  position: relative;
+}
