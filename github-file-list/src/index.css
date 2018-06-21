@@ -1,5 +1,17 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+.file-list {
+  font-family: Helvetica, sans-serif;
+  width: 980px;
+  color: #333;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.file-list td {
+  border-top: 1px solid #ccc;
+}
+
+.file-name {
+  padding: 4px;
+  max-width: 180px;
 }
