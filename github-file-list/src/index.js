@@ -2,6 +2,7 @@ import React, { component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Time from './time.js';
 
 const FileList = ({ files }) => (
   <table className="file-list">
@@ -19,8 +20,11 @@ FileList.propTypes = {
 
 const FileListItem = ({ file }) => (
   <tr className="file-list-item">
-      <FileName file={file}/>
-      <CommitMessage commit={file.latestCommit}/>
+    <FileName file={file}/>
+    <CommitMessage commit={file.latestCommit} />
+    <td className="age">
+      <Time time={file.updated_at} />
+    </td>
   </tr>
 );
 
@@ -68,7 +72,7 @@ function CommitMessage({ commit }) {
 }
 
 CommitMessage.propTypes = {
-  file: PropTypes.object.isRequired
+  commit: PropTypes.object.isRequired
 };
 
 const testFiles = [
