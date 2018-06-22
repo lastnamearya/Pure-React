@@ -3,60 +3,19 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const FileList = ({ files }) => (
-  <table className="file-list">
-    <tbody>
-      {files.map(file => 
-        <FileListItem key={file.id} file={file}/>
-      )}
-    </tbody>
-  </table>
-);
-
-FileList.propTypes = {
-  files: PropTypes.array
-};
-
-const FileListItem = ({ file }) => (
-  <tr className="file-list-item">
-      <FileName file={file}/>
-  </tr>
-);
-
-FileListItem.propTypes = {
-  file: PropTypes.object.isRequired
-};
-
-function FileIcon({ file }) {
-  let icon = 'fa-file-text-o';
-  if(file.type === 'folder') {
-    icon = 'fa-folder';
-  }
+function FileList({ files }) {
   return (
-    <td className="file-icon">
-      <i className={`fa ${icon}`}/>
-    </td>
-  );
+    <table className="file-list">
+      <tbody>
+        {files.map( file => (
+          <tr className="file-list-item" key={file.id}>
+            <td>{file.name}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
 }
-
-FileIcon.propTypes = {
-  file: PropTypes.object.isRequired
-};
-
-function FileName({ file }) {
-  return (
-    <React.Fragment>
-      <FileIcon file={file} />
-      <td className="file-name">
-        {file.name}
-      </td>
-    </React.Fragment>
-  );
-}
-
-FileName.propTypes = {
-  file: PropTypes.object.isRequired
-};
 
 const testFiles = [
   {
