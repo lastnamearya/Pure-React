@@ -8,13 +8,42 @@ function FileList({ files }) {
     <table className="file-list">
       <tbody>
         {files.map( file => (
-          <tr className="file-list-item" key={file.id}>
-            <td>{file.name}</td>
-          </tr>
+          <FileListItem file={file}/>
         ))}
       </tbody>
     </table>
   )
+}
+
+function FileListItem({ file }) {
+  return (
+    <tr className="file-list-item" key={file.id}>
+      <FileName file={file}/>
+    </tr>
+  )
+}
+
+function FileName({ file }) {
+  return (
+    <React.Fragment>
+      <FileIcon file={file}/>
+      <td className="file-name">
+        {file.name}
+      </td>
+    </React.Fragment>
+  )
+}
+
+function FileIcon({ file }) {
+  let icon = "fa-file-text-o";
+  if(file.type === "folder") {
+    icon = "fa-folder";
+  }
+  return (
+    <td className="file-icon">
+      <i className={`fa ${icon}`}/>
+    </td>
+  );
 }
 
 const testFiles = [
