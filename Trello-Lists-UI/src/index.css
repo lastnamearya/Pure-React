@@ -39,3 +39,12 @@ body {
   margin-top: 8px;
   color: #777;
 }
+
+.board-title {
+  margin-bottom: 20px;
+}
+
+.board-lists {
+  display: flex;
+  align-items: flex-start;
+}

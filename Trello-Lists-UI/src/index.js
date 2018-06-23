@@ -2,6 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+function Board({ lists }) {
+  return (
+    <div className="board">
+      <h4 className="board-title">Trello Lists</h4>
+      <div className="board-lists">
+        <Taskcard tasks={lists}/>
+      </div>
+    </div>
+  )
+}
+
 function Taskcard({ tasks }) {
   return (
     <div className="list">
@@ -46,8 +57,8 @@ const todoList = [
 ];
 
 ReactDOM.render(
-  <Taskcard
-    tasks={todoList}
+  <Board
+    lists={todoList}
   />,
   document.getElementById('root')
 );
