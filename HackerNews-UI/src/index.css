@@ -23,7 +23,14 @@ h3 {
 .stories {
   background-color: rgb(246, 246, 239);
   padding: 10px 30px;
+  margin-top: 0;
 }
 .news-pack {
   margin-bottom: 10px;
+}
+
+.header {
+  margin-bottom: 0;
+  background-color: #ff6600;
+  min-height: 20px;
 }

@@ -4,9 +4,14 @@ import './index.css';
 
 function HackerNews({ stories }) {
   return (
-    <ol className="stories">
-      {stories.map( story => <News headline={story} key={story.id}/>)}
-    </ol>
+    <div>
+      <div className="header">
+        <h3>Hacker News</h3>
+      </div>
+      <ol className="stories">
+        {stories.map( story => <News headline={story} key={story.id}/>)}
+      </ol>
+    </div>
   )
 }
 
