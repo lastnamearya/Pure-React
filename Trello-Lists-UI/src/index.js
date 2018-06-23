@@ -4,9 +4,9 @@ import './index.css';
 
 function Taskcard({ tasks }) {
   return (
-    <ul className="tasks">
+    <ul className="list">
       {tasks.map( task => (
-        <li key={task.id}>
+        <li key={task.id} className="list-item">
           {task.title}
         </li>
       ))}
