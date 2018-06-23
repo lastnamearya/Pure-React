@@ -21,6 +21,11 @@ body {
   margin-right: 20px;
 }
 
+.list-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
 .list-item {
   border-radius: 3px;
   border-bottom: 1px solid #ccc;
@@ -28,4 +33,9 @@ body {
   padding: 8px 4px 8px 6px;
   margin-bottom: 4px;
   min-height: 20px;
+}
+
+.add-card {
+  margin-top: 8px;
+  color: #777;
 }

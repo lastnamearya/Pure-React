@@ -4,13 +4,17 @@ import './index.css';
 
 function Taskcard({ tasks }) {
   return (
-    <ul className="list">
-      {tasks.map( task => (
-        <li key={task.id} className="list-item">
-          {task.title}
-        </li>
-      ))}
-    </ul>
+    <div className="list">
+      <div className="list-title">Phone Features</div>
+      <ul>
+        {tasks.map( task => (
+          <li key={task.id} className="list-item">
+            {task.title}
+          </li>
+        ))}
+      </ul>
+      <div className="add-card">Add a card...</div>
+    </div>
   );
 }
 
