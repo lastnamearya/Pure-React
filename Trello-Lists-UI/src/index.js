@@ -7,7 +7,7 @@ function Board({ lists }) {
     <div className="board">
       <h4 className="board-title">Trello Lists</h4>
       <div className="board-lists">
-        <Taskcard tasks={lists}/>
+        {lists.map( list => <Taskcard tasks={list} key={list.id}/>)}
       </div>
     </div>
   )
@@ -16,9 +16,9 @@ function Board({ lists }) {
 function Taskcard({ tasks }) {
   return (
     <div className="list">
-      <div className="list-title">Phone Features</div>
+      <div className="list-title">{tasks.title}</div>
       <ul>
-        {tasks.map( task => (
+        {tasks.cards.map( task => (
           <li key={task.id} className="list-item">
             {task.title}
           </li>
@@ -31,29 +31,55 @@ function Taskcard({ tasks }) {
 
 const todoList = [
   {
-    "id": 0,
-    "title": "Subwoofer"
-  },
+    id: 0,
+    title: "Phone Features",
+    cards: [
+      {
+        "id": 0,
+        "title": "Subwoofer"
+      },
+      {
+        "id": 1,
+        "title": "Non-porus, washable"
+      },
+      {
+        "id": 2,
+        "title": "Wings"
+      },
+      {
+        "id": 3,
+        "title": "Beveled Bezel"
+      },
+      {
+        "id": 4,
+        "title": "Bezeled Bevel"
+      },
+      {
+        "id": 5,
+        "title": "Seedless"
+      }
+    ]},
   {
-    "id": 1,
-    "title": "Non-porus, washable"
-  },
-  {
-    "id": 2,
-    "title": "Wings"
-  },
-  {
-    "id": 3,
-    "title": "Beveled Bezel"
-  },
-  {
-    "id": 4,
-    "title": "Bezeled Bevel"
-  },
-  {
-    "id": 5,
-    "title": "Seedless"
-  },
+    id: 1,
+    title: 'Lyrics',
+    cards: [
+      {
+        id: 0,
+        title: 'This was a triumph'
+      },
+      {
+        id: 1,
+        title: "I'm making a note here"
+      },
+      {
+        id: 2,
+        title: 'HUGE SUCCESS'
+      },
+      {
+        id: 3,
+        title: "It's hard to overstate my satisfaction"
+      }
+    ]}
 ];
 
 ReactDOM.render(
