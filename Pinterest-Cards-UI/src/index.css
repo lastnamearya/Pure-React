@@ -38,6 +38,26 @@ body {
   margin-bottom: 20px;
 }
 
+.nav {
+  display: inline-block;
+}
+
+.nav-ul {
+  list-style-type: none;
+  display: flex;
+  margin-top: 30px;
+}
+
+.nav-li {
+    font-size:16px;
+    margin:0 80px;
+    color: grey;
+    font-weight: bold;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+
 .description {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto Oxygen-Sans", Ubuntu, Cantarell, "“Fira Sans”", "“Droid Sans”", "Helvetica Neue", Helvetica, "\\30D2ラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "\\30E1イリオ", Meiryo, "ＭＳ Ｐゴシック", Arial, sans-serif;
 }

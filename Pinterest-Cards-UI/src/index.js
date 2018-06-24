@@ -37,11 +37,34 @@ function Header() {
     <div className="header">
       <img src={top} className="aviation" alt="Aviation Explorer"/>
       <h1>Aviation Explorer</h1>
+      <Nav/>
     </div>
   );
 }
 
-
+function Nav() {
+  return (
+    <div className="nav">
+      <ul className="nav-ul">
+        <li className="nav-li">
+          37 <p>Boards</p>
+        </li>
+        <li className="nav-li">
+          8.9K <p>Pins</p>
+        </li>
+        <li className="nav-li">
+          186 <p>Likes</p>
+        </li>
+        <li className="nav-li">
+          8.9K <p>Followers</p>
+        </li>
+        <li className="nav-li">
+          1.8K <p>Following</p>
+        </li>
+      </ul>
+    </div>
+  )
+}
 
 const cardList = [
   {
