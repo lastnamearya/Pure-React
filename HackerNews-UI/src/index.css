@@ -11,9 +11,10 @@ body {
 
 h3 {
   line-height: 1.4em;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 10pt;
-  margin: 0;
+  margin-bottom: 0;
+  margin-left: 5px;
 }
 
 .story {
