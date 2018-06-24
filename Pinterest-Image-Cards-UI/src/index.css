@@ -9,6 +9,14 @@ body {
   font-size: 14px;
 }
 
+.board {
+  display: flex;
+}
+
+.board > * {
+  margin: 20px;
+}
+
 .images {
   border-radius: 10px;
 }
