@@ -11,6 +11,7 @@ body {
 
 .board {
   display: flex;
+  margin-left: 15px;
 }
 
 .board > * {
@@ -23,6 +24,18 @@ body {
 
 .head-img {
   max-width: 300px;
+}
+
+.header {
+  padding-top: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.aviation {
+  border-radius: 50%;
+  max-width: 100px;
+  margin-bottom: 20px;
 }
 
 .description {
