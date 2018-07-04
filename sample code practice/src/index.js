@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function handleAction(event) {
-  console.log('Child did:', event);
-}
-
-function Parent() {
-  return (
-    <Child onAction={handleAction}/>
-  );
-}
+const Page = () => (
+  <div>
+    <CountingParent/>
+    <CountingParent/>
+    <CountingParent/>
+  </div>
+);
 
 function Child({ onAction }) {
   return (
@@ -42,6 +40,6 @@ class CountingParent extends React.Component {
 }
 
 ReactDOM.render(
-  <CountingParent/>,
+  <Page/>,
   document.getElementById('root')
 );
