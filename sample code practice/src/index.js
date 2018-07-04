@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function Nav({ children }) {
-  let items = React.Children.toArray(children);
-  for(let i = items.length - 1; i >= 1; i--) {
-    items.slice(i, 0,
-      <span key={i} className="separator">|</span>
-    );
-  }
+function handleAction(event) {
+  console.log('Child did:', event);
+}
+
+function Parent() {
   return (
-    <div>{items}</div>
+    <Child onAction={handleAction}/>
+  );
+}
+
+function Child({ onAction }) {
+  return (
+    <button onClick={onAction}>
+      Click Me!
+    </button>
   );
 }
 
 ReactDOM.render(
-  <IconButton 
-    children={"Do The Thing"}
-  />,
-  document.querySelector('#root')
+  <Parent/>,
+  document.getElementById('root')
 );
