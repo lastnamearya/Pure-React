@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class Example extends Component {
-  state = { text: ' '};
+class RefInput extends React.Component {
+  showValue = () => {
+    alert(`Input contains: ${this.input.value}`);
+  }
 
-  handleChange = (event) => {
-    this.setState({
-      text: event.target.value
-    });
-  }
-    render() {
-      return (
-        <input type="text"
-          value={this.state.text}
-          onChange={this.handleChange}
+  render() {
+    return (
+      <div>
+        <input 
+          type="text"
+          ref={input => this.input = input}
         />
-      );
-    }
+        <button onClick={this.showValue}>
+          Alert the Value!
+        </button>
+      </div>
+    );
   }
+}
 
 ReactDOM.render(
-  <Example/>,
+  <RefInput/>,
   document.getElementById('root')
 );
