@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-class RefInput extends React.Component {
-  showValue = () => {
-    alert(`Input contains: ${this.input.value}`);
+const RefInputStateless = () => {
+  let input;
+
+  const showValue = () => {
+    alert(`Input contains: ${input.value}`);
   }
 
-  render() {
-    return (
-      <div>
-        <input 
-          type="text"
-          ref={input => this.input = input}
-        />
-        <button onClick={this.showValue}>
-          Alert the Value!
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <input
+        type="text"
+        ref={i => input = i}
+      />
+      <button onClick={showValue}>
+        Alert the Value!
+      </button>
+    </div>
+  )
+
 }
 
 ReactDOM.render(
-  <RefInput/>,
+  <RefInputStateless/>,
   document.getElementById('root')
 );
