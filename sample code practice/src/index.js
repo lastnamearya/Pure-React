@@ -1,52 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-const Page = () => (
-  <div>
-    <CountingParent/>
-    <CountingParent/>
-    <CountingParent/>
-  </div>
-);
+class Example extends Component {
+  state = { text: ' '};
 
-function Child({ onAction }) {
-  return (
-    <button onClick={onAction}>
-      Click Me!
-    </button>
-  );
-}
-
-class CountingParent extends React.Component {
-  state = {
-    actionCount: 0
-  }
-
-  handleAction = (action) => {
-    console.log('Child says', action);
+  handleChange = (event) => {
     this.setState({
-      actionCount: this.state.actionCount + 1
+      text: event.target.value
     });
   }
-
-  resetState = () => {
-    this.setState({
-      actionCount: 0
-    });
+    render() {
+      return (
+        <input type="text"
+          value={this.state.text}
+          onChange={this.handleChange}
+        />
+      );
+    }
   }
-
-  render() {
-    return (
-      <div>
-        <Child onAction={this.handleAction}/>
-        <p>Clicked {this.state.actionCount} times</p> 
-        <button onClick={this.resetState}>Reset</button>
-      </div>
-    );
-  }
-}
 
 ReactDOM.render(
-  <Page/>,
+  <Example/>,
   document.getElementById('root')
 );
