@@ -1,28 +1,51 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const RefInputStateless = () => {
-  let input;
+class Content extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const showValue = () => {
-    alert(`Input contains: ${input.value}`);
+    console.log("constructor");
   }
 
-  return (
-    <div>
-      <input
-        type="text"
-        ref={i => input = i}
-      />
-      <button onClick={showValue}>
-        Alert the Value!
-      </button>
-    </div>
-  )
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
 
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+
+  render() {
+    console.log("render");
+    return <div className="content">Hello, World!</div>;
+  }
 }
 
-ReactDOM.render(
-  <RefInputStateless/>,
-  document.getElementById('root')
-);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      expanded: false
+    };
+  }
+
+  toggleComponent() {
+    this.setState({ expanded: !this.state.expanded });
+  }
+
+  render() {
+    return (
+      <div>
+        <button type="button" onClick={this.toggleComponent.bind(this)}>
+          Toggle
+          {this.state.expanded ? <Content /> : <div />}
+        </button>
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
