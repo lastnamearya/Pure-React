@@ -1,4 +1,4 @@
-# Built this Static UIs on my Own :zap: 
+# Built these Static UIs on my Own :zap: 
 
 ## Hackernews-Clone
 
