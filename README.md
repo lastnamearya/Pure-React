@@ -1,4 +1,4 @@
-# Built these Static UIs on my Own :zap: 
+# Built these React UIs after finishing Pure React Book for fun :zap: 
 
 ## Hackernews-Clone
 
